@@ -1,121 +1,87 @@
+// declaraction of document.ready() function.
 (function () {
-  // A Simple EventListener
-  [Element, Document, Window].forEach((target) => {
-    target.prototype._addEventListener = target.prototype.addEventListener;
-    target.prototype._removeEventListener =
-      target.prototype.removeEventListener;
-    target.prototype.addEventListener = target.prototype.on = function (
-      name,
-      listener,
-      options
-    ) {
-      if (!this.__listeners__) {
-        this.__listeners__ = {};
-      }
-      if (!this.__listeners__[name]) {
-        this.__listeners__[name] = [];
-      }
-      // Check if the listener is already added
-      for (let [l, o] of this.__listeners__[name]) {
-        if (l === listener && JSON.stringify(o) === JSON.stringify(options)) {
-          return this; // Listener is already added, do nothing
-        }
-      }
-      this.__listeners__[name].push([listener, options]);
-      this._addEventListener(name, listener, options);
-      return this;
+    var ie = !!(window.attachEvent && !window.opera);
+    var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && (RegExp.$1 < 525);
+    var fn = [];
+    var run = function () {
+        for (var i = 0; i < fn.length; i++) fn[i]();
     };
-    target.prototype.removeEventListener = target.prototype.off = function (
-      name,
-      listener,
-      options
-    ) {
-      if (!this.__listeners__ || !this.__listeners__[name]) {
-        return this;
-      }
-      if (!listener) {
-        // remove all event listeners
-        this.__listeners__[name].forEach(([listener, options]) => {
-          this.removeEventListener(name, listener, options);
-        });
-        delete this.__listeners__[name];
-        return this;
-      }
-      this._removeEventListener(name, listener, options);
-      this.__listeners__[name] = this.__listeners__[name].filter(
-        ([l, o]) =>
-          l !== listener || JSON.stringify(o) !== JSON.stringify(options)
-      );
-      if (this.__listeners__[name].length === 0) {
-        delete this.__listeners__[name];
-      }
-      return this;
+    var d = document;
+    d.ready = function (f) {
+        if (!ie && !wk && d.addEventListener)
+            return d.addEventListener('DOMContentLoaded', f, false);
+        if (fn.push(f) > 1) return;
+        if (ie)
+            (function () {
+                try {
+                    d.documentElement.doScroll('left');
+                    run();
+                } catch (err) {
+                    setTimeout(arguments.callee, 0);
+                }
+            })();
+        else if (wk)
+            var t = setInterval(function () {
+                if (/^(loaded|complete)$/.test(d.readyState))
+                    clearInterval(t), run();
+            }, 0);
     };
-  });
-  // Simple Selector
-  window._$ = (selector) => {
-    if (selector.startsWith("#") && !selector.includes(' ')) {
-      return document.getElementById(selector.slice(1));
-    }
-    return document.querySelector(selector);
-  };
-  window._$$ = (selector) => document.querySelectorAll(selector);
-
-  // dark_mode
-  let mode = window.localStorage.getItem("dark_mode");
-  const setDarkMode = (isDark) => {
-    if (isDark) {
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      document.documentElement.removeAttribute("data-theme");
-    }
-    const iconHtml = `<a id="nav-${
-      isDark ? "sun" : "moon"
-    }-btn" class="nav-icon dark-mode-btn"></a>`;
-    document
-      .getElementById("sub-nav")
-      .insertAdjacentHTML("beforeend", iconHtml);
-    document.body.dispatchEvent(
-      new CustomEvent(isDark ? "dark-theme-set" : "light-theme-set")
-    );
-  };
-  if (mode === null) {
-    const domMode = document.documentElement.getAttribute("data-theme");
-    mode = domMode === "dark" ? "true" : "false";
-    window.localStorage.setItem("dark_mode", mode);
-  }
-  setDarkMode(mode === "true");
-
-  document
-    .querySelector(".dark-mode-btn")
-    .addEventListener("click", function () {
-      const id = this.id;
-      if (id == "nav-sun-btn") {
-        window.localStorage.setItem("dark_mode", "false");
-        document.body.dispatchEvent(new CustomEvent("light-theme-set"));
-        document.documentElement.removeAttribute("data-theme");
-        this.id = "nav-moon-btn";
-      } else {
-        window.localStorage.setItem("dark_mode", "true");
-        document.body.dispatchEvent(new CustomEvent("dark-theme-set"));
-        document.documentElement.setAttribute("data-theme", "dark");
-        this.id = "nav-sun-btn";
-      }
-    });
-
-  let oldScrollTop = 0;
-  window.addEventListener("scroll", () => {
-    let scrollTop =
-      document.documentElement.scrollTop || document.body.scrollTop;
-    const diffY = scrollTop - oldScrollTop;
-    window.diffY = diffY;
-    oldScrollTop = scrollTop;
-    if (diffY < 0) {
-      document
-        .getElementById("header-nav")
-        .classList.remove("header-nav-hidden");
-    } else {
-      document.getElementById("header-nav").classList.add("header-nav-hidden");
-    }
-  });
 })();
+
+
+document.ready(
+    // toggleTheme function.
+    // this script shouldn't be changed.
+    () => {
+        var _Blog = window._Blog || {};
+        const currentTheme = window.localStorage && window.localStorage.getItem('theme');
+        const isDark = currentTheme === 'dark';
+        const pagebody = document.getElementsByTagName('body')[0]
+        if (isDark) {
+            document.getElementById("switch_default").checked = true;
+            // mobile
+            document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+        } else {
+            document.getElementById("switch_default").checked = false;
+            // mobile
+            document.getElementById("mobile-toggle-theme").innerText = "· Light"
+        }
+        _Blog.toggleTheme = function () {
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+            document.getElementsByClassName('toggleBtn')[0].addEventListener('click', () => {
+                if (pagebody.classList.contains('dark-theme')) {
+                    pagebody.classList.remove('dark-theme');
+                } else {
+                    pagebody.classList.add('dark-theme');
+                }
+                window.localStorage &&
+                window.localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light',)
+            })
+            // moblie
+            document.getElementById('mobile-toggle-theme').addEventListener('click', () => {
+                if (pagebody.classList.contains('dark-theme')) {
+                    pagebody.classList.remove('dark-theme');
+                    // mobile
+                    document.getElementById("mobile-toggle-theme").innerText = "· Light"
+
+                } else {
+                    pagebody.classList.add('dark-theme');
+                    // mobile
+                    document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+                }
+                window.localStorage &&
+                window.localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light',)
+            })
+        };
+        _Blog.toggleTheme();
+        // ready function.
+    }
+);
