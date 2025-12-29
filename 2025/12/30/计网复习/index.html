@@ -1,0 +1,586 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计网复习 | Sweet Sugar Life</title><meta name="author" content="Sugar"><meta name="copyright" content="Sugar"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="2025年计算机网络原理与编程期末复习简答（6分*5）R23: 因特网协议栈中的5个层次都有哪些？在这些层次中，每层的主要任务是什么？ (What arethe five layers in the Internet protocol stack? What are the principal responsibilities of each of these layers?)5层因特网协议  应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计网复习">
+<meta property="og:url" content="http://sweetsugarlife.github.io/2025/12/30/%E8%AE%A1%E7%BD%91%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Sweet Sugar Life">
+<meta property="og:description" content="2025年计算机网络原理与编程期末复习简答（6分*5）R23: 因特网协议栈中的5个层次都有哪些？在这些层次中，每层的主要任务是什么？ (What arethe five layers in the Internet protocol stack? What are the principal responsibilities of each of these layers?)5层因特网协议  应">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://sweetsugarlife.github.io/img/favicon.png">
+<meta property="article:published_time" content="2025-12-29T22:29:57.000Z">
+<meta property="article:modified_time" content="2025-12-29T22:30:35.219Z">
+<meta property="article:author" content="Sugar">
+<meta property="article:tag" content="大学奇迹">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sweetsugarlife.github.io/img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://sweetsugarlife.github.io/2025/12/30/%E8%AE%A1%E7%BD%91%E5%A4%8D%E4%B9%A0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.14.0-b3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计网复习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-12-30 06:30:35'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/120889293.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Sweet Sugar Life"><span class="site-name">Sweet Sugar Life</span></a></span><div id="menus"><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">计网复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-12-29T22:29:57.000Z" title="发表于 2025-12-30 06:29:57">2025-12-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-12-29T22:30:35.219Z" title="更新于 2025-12-30 06:30:35">2025-12-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="计网复习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="2025年计算机网络原理与编程期末复习"><a href="#2025年计算机网络原理与编程期末复习" class="headerlink" title="2025年计算机网络原理与编程期末复习"></a>2025年计算机网络原理与编程期末复习</h1><h2 id="简答（6分-5）"><a href="#简答（6分-5）" class="headerlink" title="简答（6分*5）"></a>简答（6分*5）</h2><h3 id="R23-因特网协议栈中的5个层次都有哪些？在这些层次中，每层的主要任务是什么？-What-arethe-five-layers-in-the-Internet-protocol-stack-What-are-the-principal-responsibilities-of-each-of-these-layers"><a href="#R23-因特网协议栈中的5个层次都有哪些？在这些层次中，每层的主要任务是什么？-What-arethe-five-layers-in-the-Internet-protocol-stack-What-are-the-principal-responsibilities-of-each-of-these-layers" class="headerlink" title="R23: 因特网协议栈中的5个层次都有哪些？在这些层次中，每层的主要任务是什么？ (What arethe five layers in the Internet protocol stack? What are the principal responsibilities of each of these layers?)"></a><font color=skyblue>R23:</font> 因特网协议栈中的5个层次都有哪些？在这些层次中，每层的主要任务是什么？<br><small> (What arethe five layers in the Internet protocol stack? What are the principal responsibilities of each of these layers?)</small></h3><p><font color=blue>5层因特网协议</font></p>
+<ol>
+<li><p>应用层:</p>
+<ul>
+<li>应用层是网络应用程序及他们的应用程序停留的地方。</li>
+<li>应用层协议分布在多个端系统上，而一个端系统中的应用程序使用协议与另一个端系统中的应用程序交换信息分组。我们把这种位于应用层的信息分组称为<font color=red>“报文 <small>(message)</small>”</font></li>
+</ul>
+</li>
+<li><p>运输层:</p>
+<ul>
+<li>因特网的运输层在应用程序节点之间传送应用层报文。</li>
+<li>运输层的分组称为<font color=red>“报文段 <small>(segment)</small>”</font></li>
+</ul>
+</li>
+<li><p>网络层:</p>
+<ul>
+<li>网络层负责将称为<font color=red>“数据报 <small>(datagram)</small>”</font>的网络层分组从一台主机移动到另一台主机。</li>
+</ul>
+</li>
+<li><p>链路层:</p>
+<ul>
+<li>因特网的链路层将网络层分组从一个节点（主机&#x2F;服务器）移动到路径的下一个节点。</li>
+<li>链路层提供的服务取决于应用于该链路层的特定链路层协议。</li>
+<li>链路层分组称为<font color=red>“帧 <small>(frame)</small>”</font></li>
+</ul>
+</li>
+<li><p>物理层:</p>
+<ul>
+<li>物理层的任务是将该帧的中的一个个<font color=red>“比特 <small>(bit)</small>”</font>从一个节点移动到下一个节点。</li>
+</ul>
+</li>
+</ol>
+<h3 id="R25-路由器处理因特网协议栈中的哪些层次？链路层交换机处理的是哪些层次？主机处理的是哪些层次？-Which-layers-in-the-Internet-protocol-stack-does-a-router-process-Which-layers-does-a-link-layer-switch-process-Which-layers-does-a-host-process"><a href="#R25-路由器处理因特网协议栈中的哪些层次？链路层交换机处理的是哪些层次？主机处理的是哪些层次？-Which-layers-in-the-Internet-protocol-stack-does-a-router-process-Which-layers-does-a-link-layer-switch-process-Which-layers-does-a-host-process" class="headerlink" title="R25: 路由器处理因特网协议栈中的哪些层次？链路层交换机处理的是哪些层次？主机处理的是哪些层次？ (Which layers in the Internet protocol stack does a router process? Which layers does a link-layer switch process? Which layers does a host process?)"></a><font color=skyblue>R25:</font> 路由器处理因特网协议栈中的哪些层次？链路层交换机处理的是哪些层次？主机处理的是哪些层次？<br><small> (Which layers in the Internet protocol stack does a router process? Which layers does a link-layer switch process? Which layers does a host process?)</small></h3><ul>
+<li>路由器处理网络层、链路层、物理层，链路层（现代的路由器有可能会担当防火墙或缓存，因此可能会处理运输层）。</li>
+<li>交换机处理链路层。</li>
+<li>主机处理所有五个层次。</li>
+</ul>
+<h3 id="P72-为什么使用web缓存？-Why-use-web-caching"><a href="#P72-为什么使用web缓存？-Why-use-web-caching" class="headerlink" title="P72: 为什么使用web缓存？ (Why use web caching?)"></a><font color=skyblue>P72:</font> 为什么使用web缓存？<br><small> (Why use web caching?)</small></h3><ul>
+<li>WEB缓存器可以大大减少客户请求的响应时间，<font color=blue>特别是客户与初始服务器之间的瓶颈带宽远低于客户与WEB缓存器之间的瓶颈带宽时。</font></li>
+<li>WEB缓存器能大大减少一个机构的接入链路到因特网的通信量。</li>
+<li>WEB缓存器能从整体上大大减低因特网上WEB流量从而改善所有应用的性能。</li>
+</ul>
+<h3 id="R5-运行在一台主机上的一个进程，使用什么信息来标识运行在另一台主机上的进程？-Whatinformation-is-used-by-a-process-running-on-one-host-to-identify-a-process-running-on-another-host"><a href="#R5-运行在一台主机上的一个进程，使用什么信息来标识运行在另一台主机上的进程？-Whatinformation-is-used-by-a-process-running-on-one-host-to-identify-a-process-running-on-another-host" class="headerlink" title="R5: 运行在一台主机上的一个进程，使用什么信息来标识运行在另一台主机上的进程？ (Whatinformation is used by a process running on one host to identify a process running on another host?)"></a><font color=skyblue>R5:</font> 运行在一台主机上的一个进程，使用什么信息来标识运行在另一台主机上的进程？<br><small> (Whatinformation is used by a process running on one host to identify a process running on another host?)</small></h3><ul>
+<li>端口</li>
+<li>IP</li>
+</ul>
+<h3 id="R10-握手协议的作用是什么？-What-is-meant-by-a-handshaking-protocol"><a href="#R10-握手协议的作用是什么？-What-is-meant-by-a-handshaking-protocol" class="headerlink" title="R10:握手协议的作用是什么？ (What is meant by a handshaking protocol?)"></a><font color=skyblue>R10:</font>握手协议的作用是什么？<br><small> (What is meant by a handshaking protocol?)</small></h3><ul>
+<li>握手协议是指主要用来让客户端及服务器确认彼此的身份的一类网络协议</li>
+</ul>
+<h3 id="R6-当某应用程序运行在UDP上时，该应用程序可能得到可靠数据传输吗？如果能，如何实现？-Is-it-possible-for-an-application-to-enjoy-reliable-data-transfer-even-when-the-application-runs-over-UDP-If-so-how"><a href="#R6-当某应用程序运行在UDP上时，该应用程序可能得到可靠数据传输吗？如果能，如何实现？-Is-it-possible-for-an-application-to-enjoy-reliable-data-transfer-even-when-the-application-runs-over-UDP-If-so-how" class="headerlink" title="R6:当某应用程序运行在UDP上时，该应用程序可能得到可靠数据传输吗？如果能，如何实现？ (Is it possible for an application to enjoy reliable data transfer even when the application runs over UDP? If so, how?)"></a><font color=skyblue>R6:</font>当某应用程序运行在UDP上时，该应用程序可能得到可靠数据传输吗？如果能，如何实现？<br><small> (Is it possible for an application to enjoy reliable data transfer even when the application runs over UDP? If so, how?)</small></h3><ul>
+<li>在应用层添加差错检测，需要程序开发人员在程序中添加一些检测代码</li>
+</ul>
+<h3 id="R14-a-主机A正在通过TCP连接向主机B发送一个大文件。假设主机B没有数据要发送给主机A。主机B不会向主机A发送确认，因为主机B无法在数据中捎带确认信息。b-TCP接收窗口（rwnd）的大小在整个连接期间永远不会改变。c-假设主机A正在通过TCP连接向主机B发送一个大文件。主机A发送的未被确认的字节数不能超过接收缓冲区的大小。d-假设主机A正在通过TCP连接向主机B发送一个大文件。如果该连接中某个段的序列号为m，那么下一个段的序列号一定是m-1。e-TCP段在其头部有一个字段用于接收窗口（rwnd）。f-假设TCP连接中最后一个SampleRTT等于1秒。该连接当前的超时间隔（TimeoutInterval）一定大于或等于1秒。g-假设主机A通过TCP连接向主机B发送一个段，其序列号为38，包含4字节数据。在同一段中，确认号一定是42。-a-Host-A-is-sending-Host-B-a-large-file-over-a-TCP-connection-Assume-Host-B-has-no-data"><a href="#R14-a-主机A正在通过TCP连接向主机B发送一个大文件。假设主机B没有数据要发送给主机A。主机B不会向主机A发送确认，因为主机B无法在数据中捎带确认信息。b-TCP接收窗口（rwnd）的大小在整个连接期间永远不会改变。c-假设主机A正在通过TCP连接向主机B发送一个大文件。主机A发送的未被确认的字节数不能超过接收缓冲区的大小。d-假设主机A正在通过TCP连接向主机B发送一个大文件。如果该连接中某个段的序列号为m，那么下一个段的序列号一定是m-1。e-TCP段在其头部有一个字段用于接收窗口（rwnd）。f-假设TCP连接中最后一个SampleRTT等于1秒。该连接当前的超时间隔（TimeoutInterval）一定大于或等于1秒。g-假设主机A通过TCP连接向主机B发送一个段，其序列号为38，包含4字节数据。在同一段中，确认号一定是42。-a-Host-A-is-sending-Host-B-a-large-file-over-a-TCP-connection-Assume-Host-B-has-no-data" class="headerlink" title="R14:a. 主机A正在通过TCP连接向主机B发送一个大文件。假设主机B没有数据要发送给主机A。主机B不会向主机A发送确认，因为主机B无法在数据中捎带确认信息。b. TCP接收窗口（rwnd）的大小在整个连接期间永远不会改变。c. 假设主机A正在通过TCP连接向主机B发送一个大文件。主机A发送的未被确认的字节数不能超过接收缓冲区的大小。d. 假设主机A正在通过TCP连接向主机B发送一个大文件。如果该连接中某个段的序列号为m，那么下一个段的序列号一定是m+1。e. TCP段在其头部有一个字段用于接收窗口（rwnd）。f. 假设TCP连接中最后一个SampleRTT等于1秒。该连接当前的超时间隔（TimeoutInterval）一定大于或等于1秒。g. 假设主机A通过TCP连接向主机B发送一个段，其序列号为38，包含4字节数据。在同一段中，确认号一定是42。 (a. Host A is sending Host B a large file over a TCP connection. Assume Host B has no data"></a><font color=skyblue>R14:</font><br>a. 主机A正在通过TCP连接向主机B发送一个大文件。假设主机B没有数据要发送给主机A。主机B不会向主机A发送确认，因为主机B无法在数据中捎带确认信息。<br>b. TCP接收窗口（rwnd）的大小在整个连接期间永远不会改变。<br>c. 假设主机A正在通过TCP连接向主机B发送一个大文件。主机A发送的未被确认的字节数不能超过接收缓冲区的大小。<br>d. 假设主机A正在通过TCP连接向主机B发送一个大文件。如果该连接中某个段的序列号为m，那么下一个段的序列号一定是m+1。<br>e. TCP段在其头部有一个字段用于接收窗口（rwnd）。<br>f. 假设TCP连接中最后一个SampleRTT等于1秒。该连接当前的超时间隔（TimeoutInterval）一定大于或等于1秒。<br>g. 假设主机A通过TCP连接向主机B发送一个段，其序列号为38，包含4字节数据。在同一段中，确认号一定是42。<br><small> (a. Host A is sending Host B a large file over a TCP connection. Assume Host B has no data</h3><p>to send Host A. Host B will not send acknowledgments to Host A because Host B cannot<br>piggyback the acknowledgments on data.<br>b. The size of the TCP rwnd never changes throughout the duration of the connection.<br>c. Suppose Host A is sending Host B a large file over a TCP connection. The number of<br>unacknowledged bytes that A sends cannot exceed the size of the receive buffer.<br>d. Suppose Host A is sending a large file to Host B over a TCP connection. If the sequence<br>number for a segment of this connection is m, then the sequence number for the<br>subsequent segment will necessarily be m+1. e. The TCP segment has a field in its header for rwnd . f.<br>Suppose that the last SampleRTT in a TCP connection is equal to 1 sec. The current<br>value of TimeoutInterval for the connection will necessarily be ≥1 sec.<br>g. Suppose Host A sends one segment with sequence number 38 and 4 bytes of data over<br>a TCPconnection to Host B. In this same segment the acknowledgment number is<br>necessarily 42.<br>)</small></p>
+<ul>
+<li>a. 错b. 错c.对d.错e.对f.错g.错</li>
+</ul>
+<h3 id="R3-我们对网络层执行的转发功能和路由选择功能进行区别。路由选择和转发的主要区别是什么？-Wemadeadistinction-between-the-forwarding-function-and-the-routing-function-performed-inthe-network-layer-What-are-the-key-differences-between-routing-and-forwarding"><a href="#R3-我们对网络层执行的转发功能和路由选择功能进行区别。路由选择和转发的主要区别是什么？-Wemadeadistinction-between-the-forwarding-function-and-the-routing-function-performed-inthe-network-layer-What-are-the-key-differences-between-routing-and-forwarding" class="headerlink" title="R3:我们对网络层执行的转发功能和路由选择功能进行区别。路由选择和转发的主要区别是什么？ (Wemadeadistinction between the forwarding function and the routing function performed inthe network layer. What are the key differences between routing and forwarding?)"></a><font color=skyblue>R3:</font>我们对网络层执行的转发功能和路由选择功能进行区别。路由选择和转发的主要区别是什么？<br><small> (Wemadeadistinction between the forwarding function and the routing function performed inthe network layer. What are the key differences between routing and forwarding?)</small></h3><p>路由和转发之间的关键区别在于：</p>
+<ul>
+<li>转发是路由器将数据包从输入接口传输到输出接口的<font color=red>本地操作</font>，转发发生的时间很短(通常是几<font color=red>纳秒</font>)，因此通常在<font color=red>硬件</font>中实现。</li>
+<li>路由是指<font color=red>网络范围</font>内的过程，它来规划数据报从源到目的地的端到端路径。路由发生在更长的时间尺度上(通常是<font color=red>秒</font>)，通常在<font color=red>软件</font>中实现</li>
+</ul>
+<h3 id="R3-路由器中转发表的主要作用是什么？-Whatis-the-role-of-the-forwarding-table-within-a-router"><a href="#R3-路由器中转发表的主要作用是什么？-Whatis-the-role-of-the-forwarding-table-within-a-router" class="headerlink" title="R3:路由器中转发表的主要作用是什么？ (Whatis the role of the forwarding table within a router?)"></a><font color=skyblue>R3:</font>路由器中转发表的主要作用是什么？<br><small> (Whatis the role of the forwarding table within a router?)</small></h3><ul>
+<li>转发表在路由器中的作用是保存一系列&lt;地址前缀，出口&gt;，来指示到达的数据包将通过交换<br>结构转发到哪个外向链路接口。</li>
+</ul>
+<h3 id="R3-动态主机获取协议DHCP工作过程-Dynamic-Host-Configuration-Protocol-DHCP-Working-Process"><a href="#R3-动态主机获取协议DHCP工作过程-Dynamic-Host-Configuration-Protocol-DHCP-Working-Process" class="headerlink" title="R3:动态主机获取协议DHCP工作过程 (Dynamic Host Configuration Protocol DHCP Working Process)"></a><font color=skyblue>R3:</font>动态主机获取协议<small>DHCP</small>工作过程<br><small> (Dynamic Host Configuration Protocol <small>DHCP</small> Working Process)</small></h3><ul>
+<li>DHCP发现: 使用DHCP发现报文来发现一个要与其交互的DHCP服务器。使用广播目的地址255.255.255.255与0.0.0.0</li>
+<li>DHCP服务器提供: DHCP服务器收到一个DHCP发现报文时，用DHCP提供报文向客户做出响应。</li>
+<li>DHCP请求:新达到的用户从一个或多个服务器中选择一个，并向选中的服务器提供用DHCP请求报文进行响应回显配置的参数。</li>
+<li>DHCP ACK:服务器用DHCP ACK报文对DHCP请求报文进行响应，证实所需要的参数。</li>
+<li>客户收到DHCP ACK交互完成。</li>
+</ul>
+<h3 id="R4-比较和对照链路状态和矢量这两种路由的选择算法-Compare-and-contrast-link-state-and-distance-vector-routing-algorithms"><a href="#R4-比较和对照链路状态和矢量这两种路由的选择算法-Compare-and-contrast-link-state-and-distance-vector-routing-algorithms" class="headerlink" title="R4:比较和对照链路状态和矢量这两种路由的选择算法 (Compare and contrast link-state and distance-vector routing algorithms.)"></a><font color=skyblue>R4:</font>比较和对照链路状态和矢量这两种路由的选择算法<br><small> (Compare and contrast link-state and distance-vector routing algorithms.)</small></h3><ul>
+<li>链路状态LS为集中式算法</li>
+<li>距离矢量DV为分布式算法</li>
+</ul>
+<h3 id="R6-每个自治系统使用相同的AS内部路由选择算法是必要的吗？说明其原因。-Is-it-necessary-that-every-autonomous-system-use-the-same-intra-AS-routing-algorithm-Why-or-whynot"><a href="#R6-每个自治系统使用相同的AS内部路由选择算法是必要的吗？说明其原因。-Is-it-necessary-that-every-autonomous-system-use-the-same-intra-AS-routing-algorithm-Why-or-whynot" class="headerlink" title="R6:每个自治系统使用相同的AS内部路由选择算法是必要的吗？说明其原因。 (Is it necessary that every autonomous system use the same intra-AS routing algorithm?Why or whynot?)"></a><font color=skyblue>R6:</font>每个自治系统使用相同的AS内部路由选择算法是必要的吗？说明其原因。<br><small> (Is it necessary that every autonomous system use the same intra-AS routing algorithm?Why or whynot?)</small></h3><ul>
+<li>不必要</li>
+<li>不同AS内网络情况不同，应该由各自AS自行管控</li>
+</ul>
+<h3 id="R6-在CSMA-CD中，第5次碰撞后，节点选择-K-4-的概率有多大？结果K-4在10Mbps以太网上对应多少秒的时延？-In-CSMA-CD-after-the-fifth-collision-what-is-the-probability-that-a-node-chooses-K-4-The-result-K-4-corresponds-to-a-delay-of-how-many-seconds-on-a-10-Mbps-Ethernet"><a href="#R6-在CSMA-CD中，第5次碰撞后，节点选择-K-4-的概率有多大？结果K-4在10Mbps以太网上对应多少秒的时延？-In-CSMA-CD-after-the-fifth-collision-what-is-the-probability-that-a-node-chooses-K-4-The-result-K-4-corresponds-to-a-delay-of-how-many-seconds-on-a-10-Mbps-Ethernet" class="headerlink" title="R6:在CSMA&#x2F;CD中，第5次碰撞后，节点选择 K&#x3D;4 的概率有多大？结果K&#x3D;4在10Mbps以太网上对应多少秒的时延？ (In CSMA&#x2F;CD, after the fifth collision, what is the probability that a node chooses K&#x3D;4? The result K&#x3D;4 corresponds to a delay of how many seconds on a 10 Mbps Ethernet?)"></a><font color=skyblue>R6:</font>在CSMA&#x2F;CD中，第5次碰撞后，节点选择 <strong>K&#x3D;4</strong> 的概率有多大？结果<strong>K&#x3D;4</strong>在10Mbps以太网上对应多少秒的时延？<br><small> (In CSMA&#x2F;CD, after the fifth collision, what is the probability that a node chooses K&#x3D;4? The result K&#x3D;4 corresponds to a delay of how many seconds on a 10 Mbps Ethernet?)</small></h3><ul>
+<li>在第5次碰撞后, 一共有2^5个数可以选择, 选择K&#x3D;4的概率为1&#x2F;2^5&#x3D;0.03125.</li>
+<li>需要等待 4*51.2ms（最小帧时间）&#x3D;204.8ms</li>
+</ul>
+<h3 id="R9-MAC地址空间有多大？IPv4地址空间呢？IPV6地址空间呢？-How-big-is-the-MAC-address-space-The-IPv4-address-space-The-IPv6-address-space"><a href="#R9-MAC地址空间有多大？IPv4地址空间呢？IPV6地址空间呢？-How-big-is-the-MAC-address-space-The-IPv4-address-space-The-IPv6-address-space" class="headerlink" title="R9:MAC地址空间有多大？IPv4地址空间呢？IPV6地址空间呢？ (How big is the MAC address space? The IPv4 address space? The IPv6 address space?)"></a><font color=skyblue>R9:</font>MAC地址空间有多大？IPv4地址空间呢？IPV6地址空间呢？<br><small> (How big is the MAC address space? The IPv4 address space? The IPv6 address space?)</small></h3><ul>
+<li>MAC地址空间为6字节,2^48比特</li>
+<li>IPv4: 4 字节,2^32 比特</li>
+<li>IPv6: 21 字节, 2^128 比特</li>
+</ul>
+<h3 id="R11-ARP查询为什么要在广播帧中发送呢？ARP响应为什么要在一个具有特定目的的MAC地址来的帧中发送呢？-How-big-is-the-MAC-address-space-The-IPv4-address-space-The-IPv6-address-space"><a href="#R11-ARP查询为什么要在广播帧中发送呢？ARP响应为什么要在一个具有特定目的的MAC地址来的帧中发送呢？-How-big-is-the-MAC-address-space-The-IPv4-address-space-The-IPv6-address-space" class="headerlink" title="R11:ARP查询为什么要在广播帧中发送呢？ARP响应为什么要在一个具有特定目的的MAC地址来的帧中发送呢？ (How big is the MAC address space? The IPv4 address space? The IPv6 address space?)"></a><font color=skyblue>R11:</font>ARP查询为什么要在广播帧中发送呢？ARP响应为什么要在一个具有特定目的的MAC地址来的帧中发送呢？<br><small> (How big is the MAC address space? The IPv4 address space? The IPv6 address space?)</small></h3><ul>
+<li>ARP查询报文仅含有源和目的的IP地址,还有源MAC地址,它并不知道目的IP地址的MAC地址,<br>所以要在广播帧中发送.</li>
+<li>ARP响应报文已经知道了源和目的IP地址和MAC地址四个关键信息,完全可以构建一个具有特定<br>目的MAC地址的帧了,不需要发送广播帧增加链路的负担.</li>
+</ul>
+<h2 id="大题（10分-4）"><a href="#大题（10分-4）" class="headerlink" title="大题（10分*4）"></a>大题（10分*4）</h2><ol>
+<li>慢启动tcp拥塞控制<ul>
+<li><p>慢启动（假设无丢包）</p>
+<ul>
+<li>设置初始值：cwnd&#x3D;2^0&#x3D;1 mss 并设ssthresh初值（第一个RTT）</li>
+<li>收到ACK则 cwnd&#x3D;2^1&#x3D;2 mss（第二个RTT）</li>
+<li>……（指数增长）<br><br>  慢启动时遇到超时&#x2F;三个冗余ACK引起进入阻塞状态。</li>
+</ul>
+</li>
+<li><p>拥塞控制（出现无丢包）</p>
+<ul>
+<li>超时丢包 cwnd&#x3D;2^0&#x3D;1 mss,设ssthresh&#x3D;ssthresh&#x2F;2</li>
+<li>三个冗余ACK标识的丢包 cwnd&#x3D;cwnd&#x2F;2[+3mss]，设ssthresh&#x3D;ssthresh&#x2F;2</li>
+</ul>
+</li>
+<li><p>快速恢复</p>
+<ul>
+<li>TCP Table  <p>不分情况均cwnd=2^0=1 mss,设ssthresh=ssthresh/2</p>后重新进入慢启动阶段</li>
+<li>TCP Reno<ul>
+<li>超时丢包：（同TCP Table不分情况均cwnd&#x3D;2^0&#x3D;1 mss,设ssthresh&#x3D;ssthresh&#x2F;2，后重新进入慢启动阶段）<br>  -3ACK标识丢包：cwnd&#x3D;cwnd&#x2F;2[+3mss]，设ssthresh&#x3D;ssthresh&#x2F;2</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>子网划分，子网规划<ul>
+<li>根据&#x2F;18确定已经占用的位，在根据需要的子网数借用x^2位</li>
+<li>去除首位两个端口用作网络地址和广播地址</li>
+<li>实例：见群PPT——子网划分</li>
+</ul>
+</li>
+<li>crc校验<ul>
+<li>确定校验和，将原信息左移（校验和-1）位（扩展校验和为Ax^4+Bx^3+Cx^2+Dx^1+Ex^0形式）</li>
+<li>将原信息除以校验和得余数，为校验信息位，填入左移位补全报文。</li>
+</ul>
+</li>
+<li>路由算法（<strong>LS和DV算法</strong>，bgp算法，ospf算法）</li>
+</ol>
+<h3 id="P48-P4"><a href="#P48-P4" class="headerlink" title="P48-P4"></a>P48-P4</h3><p>考虑图 1.13 中的电路交换网络。回想一下，每条链路上有 4 条电路。顺时针方向将四个交换机标记为 A、B、C 和 D。<br><br>a. 在该网络中，任意时刻最多可以同时进行多少个连接？<br><br>b. 假设所有连接都在交换机 A 和 C 之间。那么最多可以同时进行多少个连接？<br><br>c. 假设我们希望在交换机 A 和 C 之间建立四个连接，在交换机 B 和 D 之间建立另外四个连接。我们能否通过这四条链路路由这些呼叫，以容纳所有八个连接？<br><br>    (Consider the circuit-switched network in Figure 1.13 . Recall that there are 4 circuits on<br>each link. Label the four switches A, B, C, and D, going in the clockwise direction.<br><br>a. What is the maximum number ofsimultaneous connections that can be in progress at<br>any one time in this network?<br><br>b. Suppose that all connections are between switches A and C. What is the maximum<br>number of simultaneous connections that can be in progress?<br><br>c. Suppose we want to makefour connections between switches A and C, and another four<br>connections between switches B and D. Can we route these calls through the four links<br>to accommodate all eight connections?)<br><br><br>a. 比如：<br><br>A 到 B ：4 条<br><br>B 到 C ：4 条<br><br>C 到 D ：4 条<br><br>D 到 A ：4 条<br>这 16 条可以同时连接</p>
+<h3 id="P48-P5"><a href="#P48-P5" class="headerlink" title="P48-P5"></a>P48-P5</h3><p>回顾第1.4节中的汽车大篷车类比。假设传播速度为100公里&#x2F;小时。<br><br>a. 假设大篷车行驶150公里，从一个收费站前开始，经过第二个收费站，并在第三个收费站之后结束。端到端延迟是多少？<br><br>b. 重复(a)，现在假设大篷车中有八辆车，而不是十辆车。<br>     <small>(Review the car-caravan analogy in Section 1.4 . Assume a propagation speed of 100<br>km&#x2F;hour.<br><br>a. Suppose the caravan travels 150 km, beginning in front of one tollbooth, passing through<br>a second tollbooth, and finishing just after a third tollbooth. What is the end-to-end delay?<br><br>b. Repeat (a), now assuming that there are eight cars in the caravan instead of ten.)</small><br>a.<br>收费站将整个车队推向公路的时间为 d1&#x3D;2min；<br>两收费站之间距离 75km，从一个收费站到另一个的时间 d2&#x3D;0.75h<br>总时间 d&#x3D;3d1+2d2&#x3D;96min<br><br>b.<br>d1’ &#x3D;8辆 &#x2F;5辆&#x2F;min&#x3D;1.6min<br>d’ &#x3D;3d1’ +2d2&#x3D;94.8min</p>
+<h3 id="P114-P4"><a href="#P114-P4" class="headerlink" title="P114-P4"></a>P114-P4</h3><p>请考虑以下由Wireshark捕获的ASCII字符字符串，这些字符是在浏览器发送HTTP GET消息时捕获的（即，这是HTTP GET消息的实际内容）。<br>字符<cr><lf>是回车和换行字符（即，下文斜体显示的字符字符串<cr>表示HTTP头中该位置的单个回车字符）。回答以下问题，并指出在下面的HTTP GET消息中可以找到答案的位置。<br>a. 浏览器请求的文档的URL是什么？<br>b. 浏览器运行的HTTP版本是什么？<br>c. 浏览器请求的是非持久连接还是持久连接？<br>d. 浏览器所在主机的IP地址是什么？<br>e. 是哪种类型的浏览器发起了此消息？为什么HTTP请求消息中需要浏览器类型？<br> Consider the following string of ASCII characters that were captured by Wireshark when the<br>browser sent an HTTP GET message (i.e., this is the actual content of an HTTP GET message).<br>The characters <cr><lf> are carriage return and line-feed characters (that is, the italized<br>character string <cr> in the text below represents the single carriage-return character that was<br>contained at that point in the HTTP header). Answer the following questions, indicating where in<br>the HTTP GET message below you find the answer.<br>a. What is the URL of the document requested by the browser?<br>b. Whatversion of HTTP is the browser running?<br>c. Does the browser request a non-persistent or a persistent connection?<br>d. Whatis the IP address of the host on which the browser is running?<br>e. Whattype of browser initiates this message? Why is the browser type needed in an<br>HTTP request message?<br>a.<br>gaia.cs.umass.edu&#x2F;cs453&#x2F;index.html<br>b.<br>1.1<br>c.<br>持续<br>d.<br>HTTP 报文中没有 IP 地址<br>e.<br>Mozilla&#x2F;5.0 可以针对不同的浏览器发送不同版本的网页</p>
+<h3 id="P114-P5"><a href="#P114-P5" class="headerlink" title="P114-P5"></a>P114-P5</h3><p>下面的文本显示了服务器对上述问题中的HTTP GET消息发送的回复。请回答以下问题，并指出在下面的消息中可以找到答案的位置。<br>a. 服务器是否成功找到该文档？文档回复提供的时间是什么时候？<br>b. 文档最后一次修改的时间是什么时候？<br>c. 返回的文档有多少字节？<br>d. 返回文档的前5个字节是什么？服务器是否同意保持持久连接？<br> The text below shows the reply sent from the server in response to the HTTP GET message<br>in the question above. Answer the following questions, indicating where in the message below<br>you find the answer.<br>a. Was the server able to successfully find the document or not? What time was the<br>document reply provided?<br>b. When wasthe document lastmodified?<br>c. Howmanybytes arethere in the document being returned?<br>d. Whatare the first 5 bytes of the document being returned? Did the server agree to a<br>persistent connection?<br>a.<br>能<br>Tue, 07 Mar 2008 12:39:45 GMT<br>b.<br>Last-Modified: Sat, 10 Dec 2005 18:27:46 GMT<br>c.<br>Content-Length: 3874<br>d.<br>前五个字节：”&lt;!doc”</p>
+<h3 id="P238-P2"><a href="#P238-P2" class="headerlink" title="P238-P2"></a>P238-P2</h3><p>假设两个数据包在完全相同的时间到达路由器的两个不同输入端口。假设路由器中没有其他数据包。<br>a. 假设这两个数据包要转发到两个不同的输出端口。当交换机采用共享总线时，能否同时转发这两个数据包？<br>b. 假设这两个数据包要转发到两个不同的输出端口。当交换机通过内存交换时，能否同时转发这两个数据包？<br>c. 假设这两个数据包要转发到同一个输出端口。当交换机采用交叉开关时，能否同时转发这两个数据包？<br> Suppose two packets arrive to two different input ports of a router at exactly the same time.<br>Also suppose there are no other packets anywhere in the router.<br>a. Suppose the two packets are to be forwarded to two different output ports. Is it possible<br>to forward the two packets through the switch fabric at the same time when the fabric<br>uses a shared bus?<br>b. Suppose the two packets are to be forwarded to two different output ports. Is it possible<br>to forward the two packets through the switch fabric at the same time when the fabric<br>uses switching via memory?<br>c. Suppose the two packets are to be forwarded to the same output port. Is it possible to<br>forward the two packets through the switch fabric at the same time when the fabric uses<br>a crossbar?<br>a.不，您一次只能通过共享总线传输一个数据包。<br>b.不，如文中所讨论的，通过共享系统总线一次只能完成一个内存读&#x2F;写。<br>c.不，在这种情况下，这两个数据包必须同时通过同一个输出总线发送，而这是不可能的。</p>
+<h3 id="P238-P11"><a href="#P238-P11" class="headerlink" title="P238-P11"></a>P238-P11</h3><p>考虑一个前缀为128.119.40.128&#x2F;26的子网。给出一个可以分配给该网络的IP地址示例（形式为xxx.xxx.xxx.xxx）。假设某ISP拥有形式为128.119.40.64&#x2F;26的地址块。假设它想要从该地址块创建四个子网，每个子网拥有相同数量的IP地址。四个子网的前缀（形式为a.b.c.d&#x2F;x）分别是多少？<br>Considerasubnetwithprefix128.119.40.128&#x2F;26.GiveanexampleofoneIPaddress(of<br>formxxx.xxx.xxx.xxx)thatcanbeassignedtothisnetwork.SupposeanISPownstheblockof<br>addressesoftheform128.119.40.64&#x2F;26.Supposeitwantstocreatefoursubnetsfromthis<br>block,witheachblockhaving the samenumber of IPaddresses.What are theprefixes (of form<br>a.b.c.d&#x2F;x)forthefoursubnets?<br>地址范围为：128.119.40.128 ~ 128.119.40.191<br>四个子网分别是：128.119.40.64&#x2F;28, 128.119.40.80&#x2F;28, 128.119.40.96&#x2F;28,<br>128.119.40.112&#x2F;2</p>
+<h3 id="P279-P3"><a href="#P279-P3" class="headerlink" title="P279-P3"></a>P279-P3</h3><p>考虑下列网络。在给定的链路代价下，使用Dijkstra最短路径算法计算从节点x到所有网络节点的最短路径。通过计算类似于表5.1的表格来展示该算法的工作过程<br>Considerthefollowingnetwork.Withtheindicatedlinkcosts,useDijkstra’sshortest-path<br>algorithmtocomputetheshortestpathfromxtoallnetworknodes.Showhowthealgorithm<br>worksbycomputingatablesimilartoTable5.1<br>Step N’ D(t),p(t) D(u),p(u) D(v),p(v) D(w),p(w) D(y),p(y) D(z),p(z)<br><br>0 x ∞ ∞ 3,x 6,x 6,x 8,x<br><br>1 xv 7,v 6,v 3,x 6,x 6,x 8,x<br><br>2 xvu 7,v 6,v 3,x 6,x 6,x 8,x<br><br>3 xvuw 7,v 6,v 3,x 6,x 6,x 8,x<br><br>4 xvuwy 7,v 6,v 3,x 6,x 6,x 8,x<br><br>5 xvuwyt 7,v 6,v 3,x 6,x 6,x 8,x<br><br>6 xvuwytz 7,v 6,v 3,x 6,x 6,x 8,x</p>
+<h3 id="P279-P5"><a href="#P279-P5" class="headerlink" title="P279-P5"></a>P279-P5</h3><p>考虑下面显示的网络，并假设每个节点最初都知道到其每个邻居的代价。考虑距离向量算法，并展示节点z处的距离表条目<br>Considerthenetworkshownbelow,andassumethateachnodeinitiallyknowsthecoststo<br>eachofitsneighbors.Considerthedistance-vectoralgorithmandshowthedistancetable<br>entriesatnodez</p>
+<h3 id="P279-P7"><a href="#P279-P7" class="headerlink" title="P279-P7"></a>P279-P7</h3><p>考虑下面显示的网络片段。节点x只有两个相连的邻居，w和y。w到目的地u（未显示）的最小代价路径为5，y到u的最小代价路径为6。w和y到u的完整路径（以及w到y之间的路径）未显示。网络中所有链路成本都是严格正整数。a. 给出x到目的地w、y和u的距离向量。b. 给出c(x, w)或c(x, y)的链路成本变化，使得x在执行距离向量算法后会通知其邻居有关到u的新最小代价路径。c. 给出c(x, w)或c(x, y)的链路成本变化，使得x在执行距离向量算法后不会通知其邻居有关到u的新最小代价路径。 …<br>Consider the network fragment shown below. x has only two attached neighbors, w and y.w<br>has a minimum-cost path to destination u (not shown) of 5, and y has a minimum-cost path to u<br>of 6. The complete paths from w and y to u (and between w and y) are not shown. All link costs<br>in the network have strictly positive integer values.<br>a. Give x’s distance vector for destinations w, y, and u. b. Give a link-cost change for either c(x, w) or c(x,<br>y) such that x will inform its neighbors of<br>a newminimum-cost path to u as aresult of executing the distance-vector algorithm.<br>c. Give a link-cost change for either c(x, w) or c(x, y) such that x will not inform its neighbors<br>of a new minimum-costpath to u as a result of executing the distance-vector algorithm</p>
+<h3 id="P279-P8"><a href="#P279-P8" class="headerlink" title="P279-P8"></a>P279-P8</h3><p>考虑图5.6所示的三节点拓扑。链路成本并非图5.6中所示，而是为c(x,y)&#x3D;3、c(y,z)&#x3D;6、c(z,x)&#x3D;4。计算初始化步骤后的距离表，以及同步版本距离向量算法在每次迭代后的距离表（如我们在之前讨论图5.6时所做的那样）。<br> Consider the three-node topology shown in Figure 5.6 . Rather than having the link costs<br>shown in Figure 5.6 , the link costs are c(x,y)&#x3D;3, c(y,z)&#x3D;6, c(z,x)&#x3D;4. Compute the distance tables<br>after the initialization step and after each iteration of a synchronous version of the distance?vector<br>algorithm (as we did in our earlier discussion of Figure 5.6 )</p>
+<h3 id="P179-P11"><a href="#P179-P11" class="headerlink" title="P179-P11"></a>P179-P11</h3><p>C 考虑图5.7。假设还有一个路由器w，连接到路由器y和z。所有链路的成本如下：c(x,y)&#x3D;4, c(x,z)&#x3D;50, c(y,w)&#x3D;1, c(z,w)&#x3D;1, c(y,z)&#x3D;3。假设在距离矢量路由算法中使用毒性反转。<br>a. 当距离矢量路由稳定时，路由器w、y和z相互通报它们到x的距离。它们相互告知的距离值是多少？<br>b. 现在假设x和y之间的链路成本增加到60。即使使用毒性反转，也会出现计数到无限的问题吗？为什么或为什么不？如果存在计数到无限的问题，则距离矢量路由需要多少次迭代才能再次达到稳定状态？请说明你的答案。<br>c. 如何修改c(y,z)，以便在c(y,x)从4变为60时不会出现计数到无限的问题？<br> Consider Figure 5.7. Suppose there is another router w, connected to router y and z. The<br>costs of all links are given as follows: c(x,y)&#x3D;4, c(x,z)&#x3D;50, c(y,w)&#x3D;1, c(z,w)&#x3D;1, c(y,z)&#x3D;3. Suppose<br>that poisoned reverse is used in the distance-vector routing algorithm.<br>a. Whenthe distance vector routing is stabilized, router w, y, and z inform their distances to<br>x to each other. What distance values do they tell each other?<br>b. Now suppose that the link cost between x and y increases to 60. Will there be a count-to?infinity<br>problem even if poisoned reverse is used? Why or why not? If there is a count-to?infinity problem, then<br>howmanyiterations are needed for the distance-vector routing to<br>reach a stable state again? Justify your answer.<br>c. Howdo youmodify c(y,z) such that there is no count-to-infinity problem at all if c(y,x)<br>changes from 4 to 60</p>
+<h3 id="P331-P1"><a href="#P331-P1" class="headerlink" title="P331-P1"></a>P331-P1</h3><p>考虑第6.1.1节中的交通类比。如果乘客类似于数据报，那么与之类似的链路层帧是什么？<br>Consider the transportation analogy in Section 6.1.1 . If the passenger is analagous to a<br>datagram, what is analogous to the link layer frame?<br>书中的原文是: 一个游客好比一个数据报, 每个运输区段好比一个链路, 每种运输方式好比一种<br>链路层协议, 而该旅行社好比一个路由选择协议.<br>链路层帧是承载数据报的载体, 因此我觉得可以用每种运输方式中具体的运输工具来类比链路层<br>帧, 比如汽车, 飞机等.</p>
+<h3 id="P331-P13"><a href="#P331-P13" class="headerlink" title="P331-P13"></a>P331-P13</h3><p>比较10BASE-T、100BASE-T和千兆以太网的帧结构。它们有何不同？<br>Comparetheframestructuresfor10BASE-T,100BASE-T,andGigabitEthernet.How do they differ?<br>它们没有什么不同,因此新的以太网和已安装的以太网设备基础保持完全兼容.</p>
+<h2 id="单选（2分-10）"><a href="#单选（2分-10）" class="headerlink" title="单选（2分*10）"></a>单选（2分*10）</h2><ol>
+<li>传输媒体的类型和典型代表<ul>
+<li>导向型媒体：双绞线、同轴电缆、光纤。</li>
+<li>非导向型媒体：无线电波、微波、红外线。</li>
+</ul>
+</li>
+<li>PRP结构的特点<ul>
+<li>物理层中继器（Physical Repeater），用于信号放大和整形，延长传输距离，不处理数据链路层及以上信息。</li>
+</ul>
+</li>
+<li>校验和的计算<ul>
+<li>发送方：将数据划分为16位字，求和（溢出回卷），取反码作为校验和。</li>
+<li>接收方：同样求和（包括校验和），结果应为全1（即反码为0），否则出错。</li>
+</ul>
+</li>
+<li>TCP传输中的rwnd（接收窗口）参数<ul>
+<li>rwnd表示接收方当前可接收的数据量（字节），用于流量控制，防止发送方发送过快导致接收缓冲区溢出。</li>
+</ul>
+</li>
+<li>常用的协议端口号，每层的数据单位<ul>
+<li>端口号：<ul>
+<li>HTTP（80）</li>
+<li>HTTPS（443）</li>
+<li>FTP（20&#x2F;21）</li>
+<li>DNS（53）</li>
+<li>SMTP（25）</li>
+<li>TCP&#x2F;UDP。</li>
+</ul>
+</li>
+<li>数据单位：<ul>
+<li>应用层：报文（Message）</li>
+<li>传输层：段（Segment）</li>
+<li>网络层：包&#x2F;分组（Packet）</li>
+<li>数据链路层：帧（Frame）</li>
+<li>物理层：比特（Bit）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>哪些使用底层服务<ul>
+<li>应用层协议（如HTTP、FTP）使用传输层（TCP&#x2F;UDP）提供的服务，传输层使用网络层服务，逐层向下依赖。</li>
+</ul>
+</li>
+<li>子网掩码的基本格式<ul>
+<li>由连续的1后接连续的0组成，1对应网络位和子网位，0对应主机位。</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>地址类别</th>
+<th>默认子网掩码（十进制）</th>
+<th>默认子网掩码（CIDR前缀表示）</th>
+<th>地址范围（第一个字节）</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A类</td>
+<td>255.0.0.0</td>
+<td>&#x2F;8</td>
+<td>1 - 126</td>
+<td>用于超大型网络</td>
+</tr>
+<tr>
+<td>B类</td>
+<td>255.255.0.0</td>
+<td>&#x2F;16</td>
+<td>128 - 191</td>
+<td>用于大、中型网络</td>
+</tr>
+<tr>
+<td>C类</td>
+<td>255.255.255.0</td>
+<td>&#x2F;24</td>
+<td>192 - 223</td>
+<td>用于小型网络（如局域网）</td>
+</tr>
+<tr>
+<td>8. 4种路由的特点</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<pre><code>- 静态路由：手动配置，简单稳定，不适应拓扑变化。
+- 动态路由：自动学习更新，适应变化。
+- 默认路由：指向未知网络的出口。
+- 直连路由：接口配置IP后自动生成。
+</code></pre>
+<ol start="9">
+<li>MAC地址的结构和长度<ul>
+<li>长度：48位（6字节），通常表示为十六进制（如：00-1A-2B-3C-4D-5E）。</li>
+<li>结构：前24位为OUI（厂商标识），后24位为设备唯一标识。</li>
+</ul>
+</li>
+</ol>
+<h2 id="判断（1分-10）"><a href="#判断（1分-10）" class="headerlink" title="判断（1分*10）"></a>判断（1分*10）</h2><ol>
+<li><p>LS算法和DV算法的特点</p>
+<ul>
+<li>LS（链路状态算法）：<br> 每个路由器收集整个网络的链路状态信息（通过洪泛发送LSA），构建完整的拓扑图。<br> 独立运行最短路径算法（如Dijkstra）计算到达所有目的网络的最优路径。<br> 收敛速度快，响应网络变化及时，但需要较多内存和计算资源。<br> 代表协议：OSPF。</li>
+<li>DV（距离向量算法）：<br> 每个路由器只与直接邻居交换路由信息（整个路由表或距离向量）。<br> 基于Bellman-Ford方程迭代更新自己的路由表。<br> 存在“路由环路”和“计数到无穷”问题，收敛速度较慢。<br> 代表协议：RIP。</li>
+</ul>
+</li>
+<li><p>NAT（网络地址转换）工作机理和特点</p>
+<ul>
+<li>工作机理：<br> 将私有IP地址（如192.168.x.x）转换为公有IP地址，实现多台主机共享一个公网IP。</li>
+<li>特点：<ul>
+<li>节省IPv4地址，缓解地址短缺。</li>
+<li>隐藏内部网络结构，提高安全性。</li>
+<li>破坏端到端原则，某些应用需要应用层网关（ALG）支持。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>TCP接收方的回复原理</p>
+<ul>
+<li>累积确认： 接收方发送的ACK号表示期望收到的下一个字节序号，确认该序号之前的所有数据已正确接收。</li>
+<li>乱序处理： 收到乱序报文时，重复发送最后一次正确顺序的ACK（触发快速重传）。</li>
+<li>流量控制： 通过接收窗口（rwnd）告知发送方可接收的数据量，防止缓冲区溢出。</li>
+<li>延迟确认： 不一定每收到一个报文就立即回复，可稍带确认。</li>
+</ul>
+</li>
+<li><p>RDT2.0如何进行可靠回复</p>
+<ul>
+<li>发送方发送一个分组，等待确认。</li>
+<li>接收方校验数据：若无误，回复ACK。若有错，回复NAK。</li>
+<li>发送方：收到ACK，发送下一个分组。收到NAK，重传当前分组。</li>
+<li>缺陷： 无法处理ACK&#x2F;NAK本身损坏或丢失的情况（由RDT2.1引入序列号解决）。</li>
+</ul>
+</li>
+<li><p>UDP的工作原则</p>
+<ul>
+<li>无连接： 发送前不需建立连接，直接发送数据报。</li>
+<li>不可靠： 不保证交付、不保证顺序、无拥塞控制。</li>
+<li>面向报文： 对应用层报文不合并、不拆分，保留边界。</li>
+<li>轻量高效： 首部开销小（8字节），适用于实时应用（音视频流、DNS查询）。</li>
+</ul>
+</li>
+<li><p>DNS协议中查询原理</p>
+<ul>
+<li>递归查询： 客户端向本地DNS服务器请求，服务器代表客户端完成全部查询并返回结果。</li>
+<li>迭代查询： 服务器返回下一级服务器地址，由客户端继续查询。</li>
+<li>实际混合模式： 客户端到本地DNS为递归，本地DNS到根&#x2F;顶级域名服务器为迭代。</li>
+<li>缓存机制： 减少查询延迟，提高效率。</li>
+</ul>
+</li>
+<li><p>在发送端接收端进程是通过什么进行标识的</p>
+<ul>
+<li>套接字（Socket）： 由IP地址和端口号唯一标识。</li>
+<li>IP地址标识主机。</li>
+<li>端口号标识主机上的应用进程。</li>
+<li>五元组： （源IP、源端口、目的IP、目的端口、传输层协议）唯一确定一个连接。</li>
+</ul>
+</li>
+<li><p>ICMP协议下的命令的主要功能</p>
+<ul>
+<li>ICMP作用： 网络层差错报告与诊断。</li>
+<li>常用命令：<ul>
+<li>ping： 使用ICMP回送请求（类型8）和回送应答（类型0）测试连通性。</li>
+<li>traceroute（Windows为tracert）： 利用TTL递减至0时返回的ICMP超时报文（类型11）和目的不可达报文（类型3）追踪路径。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>三种交换的特点：电路交换、报文交换、分组交换</p>
+<ul>
+<li>电路交换：通信前建立专用路径，通信期间独占资源。延迟小，适合实时通信（如电话）。资源利用率低。</li>
+<li>报文交换：存储转发整个报文，无需建立连接。延迟大，对节点存储要求高。</li>
+<li>分组交换：将报文分割为固定或可变长度的分组，独立传输。资源共享，效率高，但可能产生拥塞、乱序和丢失。分为数据报和虚电路两种方式。</li>
+</ul>
+</li>
+<li><p>BGP路由和OSPF路由的特点</p>
+<ul>
+<li>BGP（边界网关协议）：外部网关协议（EGP），用于不同自治系统（AS）之间。基于路径向量算法，考虑AS路径、策略（如经济、安全因素）。使用TCP（端口179）传输，可靠。收敛慢，但稳定，适用于大规模网络互联。</li>
+<li>OSPF（开放最短路径优先）：内部网关协议（IGP），用于同一AS内部。基于链路状态算法，使用Dijkstra计算最短路径。直接通过IP数据报发送（协议号89）。收敛快，支持分层（区域划分），适合大型内部网络。</li>
+</ul>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://sweetsugarlife.github.io">Sugar</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://sweetsugarlife.github.io/2025/12/30/%E8%AE%A1%E7%BD%91%E5%A4%8D%E4%B9%A0/">http://sweetsugarlife.github.io/2025/12/30/%E8%AE%A1%E7%BD%91%E5%A4%8D%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://sweetsugarlife.github.io" target="_blank">Sweet Sugar Life</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%A7%E5%AD%A6%E5%A5%87%E8%BF%B9/">大学奇迹</a></div><div class="post_share"><div class="social-share" data-image="/img/favicon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/06/29/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E5%A4%A7%E7%BA%B2/" title="马克思主义基本原理复习大纲"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">马克思主义基本原理复习大纲</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Sugar</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sweetsugarlife"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2025%E5%B9%B4%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BC%96%E7%A8%8B%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">2025年计算机网络原理与编程期末复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E7%AD%94%EF%BC%886%E5%88%86-5%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">简答（6分*5）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#R23-%E5%9B%A0%E7%89%B9%E7%BD%91%E5%8D%8F%E8%AE%AE%E6%A0%88%E4%B8%AD%E7%9A%845%E4%B8%AA%E5%B1%82%E6%AC%A1%E9%83%BD%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%9C%A8%E8%BF%99%E4%BA%9B%E5%B1%82%E6%AC%A1%E4%B8%AD%EF%BC%8C%E6%AF%8F%E5%B1%82%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BB%BB%E5%8A%A1%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F-What-arethe-five-layers-in-the-Internet-protocol-stack-What-are-the-principal-responsibilities-of-each-of-these-layers"><span class="toc-number">1.1.1.</span> <span class="toc-text">R23: 因特网协议栈中的5个层次都有哪些？在这些层次中，每层的主要任务是什么？ (What arethe five layers in the Internet protocol stack? What are the principal responsibilities of each of these layers?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R25-%E8%B7%AF%E7%94%B1%E5%99%A8%E5%A4%84%E7%90%86%E5%9B%A0%E7%89%B9%E7%BD%91%E5%8D%8F%E8%AE%AE%E6%A0%88%E4%B8%AD%E7%9A%84%E5%93%AA%E4%BA%9B%E5%B1%82%E6%AC%A1%EF%BC%9F%E9%93%BE%E8%B7%AF%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%A4%84%E7%90%86%E7%9A%84%E6%98%AF%E5%93%AA%E4%BA%9B%E5%B1%82%E6%AC%A1%EF%BC%9F%E4%B8%BB%E6%9C%BA%E5%A4%84%E7%90%86%E7%9A%84%E6%98%AF%E5%93%AA%E4%BA%9B%E5%B1%82%E6%AC%A1%EF%BC%9F-Which-layers-in-the-Internet-protocol-stack-does-a-router-process-Which-layers-does-a-link-layer-switch-process-Which-layers-does-a-host-process"><span class="toc-number">1.1.2.</span> <span class="toc-text">R25: 路由器处理因特网协议栈中的哪些层次？链路层交换机处理的是哪些层次？主机处理的是哪些层次？ (Which layers in the Internet protocol stack does a router process? Which layers does a link-layer switch process? Which layers does a host process?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P72-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8web%E7%BC%93%E5%AD%98%EF%BC%9F-Why-use-web-caching"><span class="toc-number">1.1.3.</span> <span class="toc-text">P72: 为什么使用web缓存？ (Why use web caching?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R5-%E8%BF%90%E8%A1%8C%E5%9C%A8%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E4%B8%8A%E7%9A%84%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B%EF%BC%8C%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E4%BF%A1%E6%81%AF%E6%9D%A5%E6%A0%87%E8%AF%86%E8%BF%90%E8%A1%8C%E5%9C%A8%E5%8F%A6%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E4%B8%8A%E7%9A%84%E8%BF%9B%E7%A8%8B%EF%BC%9F-Whatinformation-is-used-by-a-process-running-on-one-host-to-identify-a-process-running-on-another-host"><span class="toc-number">1.1.4.</span> <span class="toc-text">R5: 运行在一台主机上的一个进程，使用什么信息来标识运行在另一台主机上的进程？ (Whatinformation is used by a process running on one host to identify a process running on another host?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R10-%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F-What-is-meant-by-a-handshaking-protocol"><span class="toc-number">1.1.5.</span> <span class="toc-text">R10:握手协议的作用是什么？ (What is meant by a handshaking protocol?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R6-%E5%BD%93%E6%9F%90%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E5%9C%A8UDP%E4%B8%8A%E6%97%B6%EF%BC%8C%E8%AF%A5%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%AF%E8%83%BD%E5%BE%97%E5%88%B0%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%90%97%EF%BC%9F%E5%A6%82%E6%9E%9C%E8%83%BD%EF%BC%8C%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%EF%BC%9F-Is-it-possible-for-an-application-to-enjoy-reliable-data-transfer-even-when-the-application-runs-over-UDP-If-so-how"><span class="toc-number">1.1.6.</span> <span class="toc-text">R6:当某应用程序运行在UDP上时，该应用程序可能得到可靠数据传输吗？如果能，如何实现？ (Is it possible for an application to enjoy reliable data transfer even when the application runs over UDP? If so, how?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R14-a-%E4%B8%BB%E6%9C%BAA%E6%AD%A3%E5%9C%A8%E9%80%9A%E8%BF%87TCP%E8%BF%9E%E6%8E%A5%E5%90%91%E4%B8%BB%E6%9C%BAB%E5%8F%91%E9%80%81%E4%B8%80%E4%B8%AA%E5%A4%A7%E6%96%87%E4%BB%B6%E3%80%82%E5%81%87%E8%AE%BE%E4%B8%BB%E6%9C%BAB%E6%B2%A1%E6%9C%89%E6%95%B0%E6%8D%AE%E8%A6%81%E5%8F%91%E9%80%81%E7%BB%99%E4%B8%BB%E6%9C%BAA%E3%80%82%E4%B8%BB%E6%9C%BAB%E4%B8%8D%E4%BC%9A%E5%90%91%E4%B8%BB%E6%9C%BAA%E5%8F%91%E9%80%81%E7%A1%AE%E8%AE%A4%EF%BC%8C%E5%9B%A0%E4%B8%BA%E4%B8%BB%E6%9C%BAB%E6%97%A0%E6%B3%95%E5%9C%A8%E6%95%B0%E6%8D%AE%E4%B8%AD%E6%8D%8E%E5%B8%A6%E7%A1%AE%E8%AE%A4%E4%BF%A1%E6%81%AF%E3%80%82b-TCP%E6%8E%A5%E6%94%B6%E7%AA%97%E5%8F%A3%EF%BC%88rwnd%EF%BC%89%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%9C%A8%E6%95%B4%E4%B8%AA%E8%BF%9E%E6%8E%A5%E6%9C%9F%E9%97%B4%E6%B0%B8%E8%BF%9C%E4%B8%8D%E4%BC%9A%E6%94%B9%E5%8F%98%E3%80%82c-%E5%81%87%E8%AE%BE%E4%B8%BB%E6%9C%BAA%E6%AD%A3%E5%9C%A8%E9%80%9A%E8%BF%87TCP%E8%BF%9E%E6%8E%A5%E5%90%91%E4%B8%BB%E6%9C%BAB%E5%8F%91%E9%80%81%E4%B8%80%E4%B8%AA%E5%A4%A7%E6%96%87%E4%BB%B6%E3%80%82%E4%B8%BB%E6%9C%BAA%E5%8F%91%E9%80%81%E7%9A%84%E6%9C%AA%E8%A2%AB%E7%A1%AE%E8%AE%A4%E7%9A%84%E5%AD%97%E8%8A%82%E6%95%B0%E4%B8%8D%E8%83%BD%E8%B6%85%E8%BF%87%E6%8E%A5%E6%94%B6%E7%BC%93%E5%86%B2%E5%8C%BA%E7%9A%84%E5%A4%A7%E5%B0%8F%E3%80%82d-%E5%81%87%E8%AE%BE%E4%B8%BB%E6%9C%BAA%E6%AD%A3%E5%9C%A8%E9%80%9A%E8%BF%87TCP%E8%BF%9E%E6%8E%A5%E5%90%91%E4%B8%BB%E6%9C%BAB%E5%8F%91%E9%80%81%E4%B8%80%E4%B8%AA%E5%A4%A7%E6%96%87%E4%BB%B6%E3%80%82%E5%A6%82%E6%9E%9C%E8%AF%A5%E8%BF%9E%E6%8E%A5%E4%B8%AD%E6%9F%90%E4%B8%AA%E6%AE%B5%E7%9A%84%E5%BA%8F%E5%88%97%E5%8F%B7%E4%B8%BAm%EF%BC%8C%E9%82%A3%E4%B9%88%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%AE%B5%E7%9A%84%E5%BA%8F%E5%88%97%E5%8F%B7%E4%B8%80%E5%AE%9A%E6%98%AFm-1%E3%80%82e-TCP%E6%AE%B5%E5%9C%A8%E5%85%B6%E5%A4%B4%E9%83%A8%E6%9C%89%E4%B8%80%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%94%A8%E4%BA%8E%E6%8E%A5%E6%94%B6%E7%AA%97%E5%8F%A3%EF%BC%88rwnd%EF%BC%89%E3%80%82f-%E5%81%87%E8%AE%BETCP%E8%BF%9E%E6%8E%A5%E4%B8%AD%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AASampleRTT%E7%AD%89%E4%BA%8E1%E7%A7%92%E3%80%82%E8%AF%A5%E8%BF%9E%E6%8E%A5%E5%BD%93%E5%89%8D%E7%9A%84%E8%B6%85%E6%97%B6%E9%97%B4%E9%9A%94%EF%BC%88TimeoutInterval%EF%BC%89%E4%B8%80%E5%AE%9A%E5%A4%A7%E4%BA%8E%E6%88%96%E7%AD%89%E4%BA%8E1%E7%A7%92%E3%80%82g-%E5%81%87%E8%AE%BE%E4%B8%BB%E6%9C%BAA%E9%80%9A%E8%BF%87TCP%E8%BF%9E%E6%8E%A5%E5%90%91%E4%B8%BB%E6%9C%BAB%E5%8F%91%E9%80%81%E4%B8%80%E4%B8%AA%E6%AE%B5%EF%BC%8C%E5%85%B6%E5%BA%8F%E5%88%97%E5%8F%B7%E4%B8%BA38%EF%BC%8C%E5%8C%85%E5%90%AB4%E5%AD%97%E8%8A%82%E6%95%B0%E6%8D%AE%E3%80%82%E5%9C%A8%E5%90%8C%E4%B8%80%E6%AE%B5%E4%B8%AD%EF%BC%8C%E7%A1%AE%E8%AE%A4%E5%8F%B7%E4%B8%80%E5%AE%9A%E6%98%AF42%E3%80%82-a-Host-A-is-sending-Host-B-a-large-file-over-a-TCP-connection-Assume-Host-B-has-no-data"><span class="toc-number">1.1.7.</span> <span class="toc-text">R14:a. 主机A正在通过TCP连接向主机B发送一个大文件。假设主机B没有数据要发送给主机A。主机B不会向主机A发送确认，因为主机B无法在数据中捎带确认信息。b. TCP接收窗口（rwnd）的大小在整个连接期间永远不会改变。c. 假设主机A正在通过TCP连接向主机B发送一个大文件。主机A发送的未被确认的字节数不能超过接收缓冲区的大小。d. 假设主机A正在通过TCP连接向主机B发送一个大文件。如果该连接中某个段的序列号为m，那么下一个段的序列号一定是m+1。e. TCP段在其头部有一个字段用于接收窗口（rwnd）。f. 假设TCP连接中最后一个SampleRTT等于1秒。该连接当前的超时间隔（TimeoutInterval）一定大于或等于1秒。g. 假设主机A通过TCP连接向主机B发送一个段，其序列号为38，包含4字节数据。在同一段中，确认号一定是42。 (a. Host A is sending Host B a large file over a TCP connection. Assume Host B has no data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R3-%E6%88%91%E4%BB%AC%E5%AF%B9%E7%BD%91%E7%BB%9C%E5%B1%82%E6%89%A7%E8%A1%8C%E7%9A%84%E8%BD%AC%E5%8F%91%E5%8A%9F%E8%83%BD%E5%92%8C%E8%B7%AF%E7%94%B1%E9%80%89%E6%8B%A9%E5%8A%9F%E8%83%BD%E8%BF%9B%E8%A1%8C%E5%8C%BA%E5%88%AB%E3%80%82%E8%B7%AF%E7%94%B1%E9%80%89%E6%8B%A9%E5%92%8C%E8%BD%AC%E5%8F%91%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F-Wemadeadistinction-between-the-forwarding-function-and-the-routing-function-performed-inthe-network-layer-What-are-the-key-differences-between-routing-and-forwarding"><span class="toc-number">1.1.8.</span> <span class="toc-text">R3:我们对网络层执行的转发功能和路由选择功能进行区别。路由选择和转发的主要区别是什么？ (Wemadeadistinction between the forwarding function and the routing function performed inthe network layer. What are the key differences between routing and forwarding?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R3-%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%AD%E8%BD%AC%E5%8F%91%E8%A1%A8%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F-Whatis-the-role-of-the-forwarding-table-within-a-router"><span class="toc-number">1.1.9.</span> <span class="toc-text">R3:路由器中转发表的主要作用是什么？ (Whatis the role of the forwarding table within a router?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R3-%E5%8A%A8%E6%80%81%E4%B8%BB%E6%9C%BA%E8%8E%B7%E5%8F%96%E5%8D%8F%E8%AE%AEDHCP%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B-Dynamic-Host-Configuration-Protocol-DHCP-Working-Process"><span class="toc-number">1.1.10.</span> <span class="toc-text">R3:动态主机获取协议DHCP工作过程 (Dynamic Host Configuration Protocol DHCP Working Process)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R4-%E6%AF%94%E8%BE%83%E5%92%8C%E5%AF%B9%E7%85%A7%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E5%92%8C%E7%9F%A2%E9%87%8F%E8%BF%99%E4%B8%A4%E7%A7%8D%E8%B7%AF%E7%94%B1%E7%9A%84%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95-Compare-and-contrast-link-state-and-distance-vector-routing-algorithms"><span class="toc-number">1.1.11.</span> <span class="toc-text">R4:比较和对照链路状态和矢量这两种路由的选择算法 (Compare and contrast link-state and distance-vector routing algorithms.)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R6-%E6%AF%8F%E4%B8%AA%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%90%8C%E7%9A%84AS%E5%86%85%E9%83%A8%E8%B7%AF%E7%94%B1%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95%E6%98%AF%E5%BF%85%E8%A6%81%E7%9A%84%E5%90%97%EF%BC%9F%E8%AF%B4%E6%98%8E%E5%85%B6%E5%8E%9F%E5%9B%A0%E3%80%82-Is-it-necessary-that-every-autonomous-system-use-the-same-intra-AS-routing-algorithm-Why-or-whynot"><span class="toc-number">1.1.12.</span> <span class="toc-text">R6:每个自治系统使用相同的AS内部路由选择算法是必要的吗？说明其原因。 (Is it necessary that every autonomous system use the same intra-AS routing algorithm?Why or whynot?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R6-%E5%9C%A8CSMA-CD%E4%B8%AD%EF%BC%8C%E7%AC%AC5%E6%AC%A1%E7%A2%B0%E6%92%9E%E5%90%8E%EF%BC%8C%E8%8A%82%E7%82%B9%E9%80%89%E6%8B%A9-K-4-%E7%9A%84%E6%A6%82%E7%8E%87%E6%9C%89%E5%A4%9A%E5%A4%A7%EF%BC%9F%E7%BB%93%E6%9E%9CK-4%E5%9C%A810Mbps%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%B8%8A%E5%AF%B9%E5%BA%94%E5%A4%9A%E5%B0%91%E7%A7%92%E7%9A%84%E6%97%B6%E5%BB%B6%EF%BC%9F-In-CSMA-CD-after-the-fifth-collision-what-is-the-probability-that-a-node-chooses-K-4-The-result-K-4-corresponds-to-a-delay-of-how-many-seconds-on-a-10-Mbps-Ethernet"><span class="toc-number">1.1.13.</span> <span class="toc-text">R6:在CSMA&#x2F;CD中，第5次碰撞后，节点选择 K&#x3D;4 的概率有多大？结果K&#x3D;4在10Mbps以太网上对应多少秒的时延？ (In CSMA&#x2F;CD, after the fifth collision, what is the probability that a node chooses K&#x3D;4? The result K&#x3D;4 corresponds to a delay of how many seconds on a 10 Mbps Ethernet?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R9-MAC%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E6%9C%89%E5%A4%9A%E5%A4%A7%EF%BC%9FIPv4%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E5%91%A2%EF%BC%9FIPV6%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E5%91%A2%EF%BC%9F-How-big-is-the-MAC-address-space-The-IPv4-address-space-The-IPv6-address-space"><span class="toc-number">1.1.14.</span> <span class="toc-text">R9:MAC地址空间有多大？IPv4地址空间呢？IPV6地址空间呢？ (How big is the MAC address space? The IPv4 address space? The IPv6 address space?)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#R11-ARP%E6%9F%A5%E8%AF%A2%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9C%A8%E5%B9%BF%E6%92%AD%E5%B8%A7%E4%B8%AD%E5%8F%91%E9%80%81%E5%91%A2%EF%BC%9FARP%E5%93%8D%E5%BA%94%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%85%B7%E6%9C%89%E7%89%B9%E5%AE%9A%E7%9B%AE%E7%9A%84%E7%9A%84MAC%E5%9C%B0%E5%9D%80%E6%9D%A5%E7%9A%84%E5%B8%A7%E4%B8%AD%E5%8F%91%E9%80%81%E5%91%A2%EF%BC%9F-How-big-is-the-MAC-address-space-The-IPv4-address-space-The-IPv6-address-space"><span class="toc-number">1.1.15.</span> <span class="toc-text">R11:ARP查询为什么要在广播帧中发送呢？ARP响应为什么要在一个具有特定目的的MAC地址来的帧中发送呢？ (How big is the MAC address space? The IPv4 address space? The IPv6 address space?)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E9%A2%98%EF%BC%8810%E5%88%86-4%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">大题（10分*4）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#P48-P4"><span class="toc-number">1.2.1.</span> <span class="toc-text">P48-P4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P48-P5"><span class="toc-number">1.2.2.</span> <span class="toc-text">P48-P5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P114-P4"><span class="toc-number">1.2.3.</span> <span class="toc-text">P114-P4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P114-P5"><span class="toc-number">1.2.4.</span> <span class="toc-text">P114-P5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P238-P2"><span class="toc-number">1.2.5.</span> <span class="toc-text">P238-P2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P238-P11"><span class="toc-number">1.2.6.</span> <span class="toc-text">P238-P11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P279-P3"><span class="toc-number">1.2.7.</span> <span class="toc-text">P279-P3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P279-P5"><span class="toc-number">1.2.8.</span> <span class="toc-text">P279-P5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P279-P7"><span class="toc-number">1.2.9.</span> <span class="toc-text">P279-P7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P279-P8"><span class="toc-number">1.2.10.</span> <span class="toc-text">P279-P8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P179-P11"><span class="toc-number">1.2.11.</span> <span class="toc-text">P179-P11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P331-P1"><span class="toc-number">1.2.12.</span> <span class="toc-text">P331-P1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P331-P13"><span class="toc-number">1.2.13.</span> <span class="toc-text">P331-P13</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E9%80%89%EF%BC%882%E5%88%86-10%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">单选（2分*10）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%EF%BC%881%E5%88%86-10%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">判断（1分*10）</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/30/%E8%AE%A1%E7%BD%91%E5%A4%8D%E4%B9%A0/" title="计网复习">计网复习</a><time datetime="2025-12-29T22:29:57.000Z" title="发表于 2025-12-30 06:29:57">2025-12-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/29/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E5%A4%A7%E7%BA%B2/" title="马克思主义基本原理复习大纲">马克思主义基本原理复习大纲</a><time datetime="2025-06-28T20:22:28.000Z" title="发表于 2025-06-29 04:22:28">2025-06-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/19/%E5%85%B3%E4%BA%8E%E5%9F%BA%E4%BA%8EPC%E7%9A%84%E4%BD%8E%E6%88%90%E6%9C%ACVR%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" title="关于基于PC的低成本VR实现方式">关于基于PC的低成本VR实现方式</a><time datetime="2025-02-19T09:39:56.000Z" title="发表于 2025-02-19 17:39:56">2025-02-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/06/VRC%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%B8%96%E7%95%8C/" title="VRC另一个世界">VRC另一个世界</a><time datetime="2025-02-06T06:17:58.000Z" title="发表于 2025-02-06 14:17:58">2025-02-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/01/%E6%9C%AA%E7%9F%A5%EF%BC%9F/" title="未知？">未知？</a><time datetime="2024-07-31T16:36:23.000Z" title="发表于 2024-08-01 00:36:23">2024-08-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Sugar</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.14.0-b3"></script><script src="/js/main.js?v=4.14.0-b3"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = (ele) => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from(ele).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+    
+    codeMermaidEle.forEach(ele => {
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.innerHTML = `<pre class="mermaid-src" hidden>${ele.textContent}</pre>`
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+  
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '2ZXZ15cP7fcmUg2vd1jL6hmk-gzGzoHsz',
+      appKey: 'x5RxdblSqcQrqswRT6d7fbo1',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script id="canvas_nest" defer="defer" color="255,192,204" opacity="0.8" zIndex="-1" count="128" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
